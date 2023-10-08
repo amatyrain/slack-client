@@ -1,7 +1,7 @@
 import slackweb
 
 
-class Slack:
+class SlackClient:
     def send_slack_message(self, url, message):
         slack = slackweb.Slack(url=url)
         slackbot_icon_emoji = ":ghost:"
