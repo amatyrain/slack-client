@@ -3,7 +3,10 @@ import requests
 
 
 class SlackClient:
-    def __init__(self, api_token: str):
+    def __init__(
+        self,
+        api_token: str = None
+    ):
         self.base_url = "https://slack.com/api"
         self.api_token = api_token
         self.headers = {
