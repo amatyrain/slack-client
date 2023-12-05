@@ -28,7 +28,12 @@ class SlackClient:
         except Exception as e:
             raise Exception(e)
 
-        if response.status_code >= 400:
+        response_json = response.json()
+
+        if (
+            not response_json["ok"] or
+            response.status_code >= 400
+        ):
             raise Exception(response.json())
 
         return response
